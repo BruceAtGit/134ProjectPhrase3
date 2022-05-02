@@ -10,14 +10,38 @@
             background-image: linear-gradient(to right, rgb(0, 153, 255), green);
             font-family: 'Courier New', Courier, monospace;
         }
+        span {
+            color: red;
+        }
     </style>
+    <script type="text/javascript" src="jQuery.js"></script>
+    <script type="text/javascript">
+       $("document").ready(function () {
+            $("#mouse1").hover(fun1,fun2);
+            $("#mouse1").click(fun3);
+            $("#mouse1").hover(fun4,fun5);
+            $("th[title]").css("font-size","30px");
+        });
+
+        function fun1() {
+            $("#mouse1").css("background-color", "#004D98");
+        }
+        function fun2() {
+            $("#mouse1").css("background-color", "#A50044");
+        }
+        function fun3() {
+            $("#mouse1").css("background-color", "#FFED02");
+        }
+        function fun4() {
+            $("#mouse1").css("font-size", "150px");
+        }
+        function fun5() {
+            $("#mouse1").css("font-size", "100px");
+        }
+    </script>
 </head>
 
-<body><script>
-    alert("You have reached the Page of Taj Mahal.")
-
-
-</script> <div id="1"></div>
+<body> <div id="1"></div>
     <div><img src="7in1.png" style="width:1260px;height:350px;"></div>
     
     <div class="topNavBar">
@@ -29,7 +53,7 @@
             <div class="dropdownContent">
                 <a href="Great Wall of China.html">Great Wall of China</a>
                 <a href="Petra.html">Petra</a>
-                <a href="Chichén Itzá.html">Chichén Itzá</a>
+                <a href="chi.html">Chichén Itzá</a>
                 <a href="Machu Picchu.html">Machu Picchu</a>
                 <a href="Cristo Redentor.html">Cristo Redentor</a>
                 <a href="Colosseum.html">Colosseum</a>
@@ -40,7 +64,7 @@
 
     </div>
    
-<section style="background-color:rgba(255, 255, 255,0.5);text-align: center;font-size: 100px; padding-top: none;">THE TAJ MAHAL</section>
+<section id="mouse1" style="text-align: center;font-size: 100px; padding-top: none;"><marquee behaviour="alternate">THE TAJ MAHAL</marquee>
     <div class="up">
         <div class="photo"><img class="center" src="india1.jpeg"
                 style="border-radius: 4px;max-width: 100%;height: auto; width: 500px; height: 320px;">
@@ -49,7 +73,7 @@
                 style="border-radius: 4px;max-width: 100%;height: auto; width: 500px; height: 320px;">
         </div>
 
-
+    </section>
 
         <div class="map">
             <iframe class="center"
@@ -69,7 +93,7 @@
 
         <table class="table">
             <tr>
-                <th style="text-align: center;" colspan="2">Facts that you must know</th>
+                <th title="fact"style="text-align: center;" colspan="2">Facts that you must know</th>
             </tr>
             <tr>
                 <th>Year of History</th>
@@ -115,23 +139,24 @@
                 <h1>Tell us what do you think about the place !</h1>
             </legend>
 
-            <form name="registrarion" method="get" action="thankYou.html">
+            <form name="registration" method="get" action="thankYou.html">
                 <table>
                     <tr>
                         <td><label for="email2">Email address:</label></td>
-                        <td><input type="email" name="email" id="email2"></td>
+                        <td><input type="email" name="email" id="email"> <span id="emailResult"></span></td>
+                        
                     </tr>
                     <tr>
                         <td><label for="FN2">First Name:</label></td>
-                        <td><input type="text" name="fn" id="FN2"></td>
+                        <td><input type="text" name="fn" id="FN">  <span id="firstNameResult"></span></td>
                     </tr>
                     <tr>
                         <td><label for="LN2"> Last Name:</label></td>
-                        <td><input type="text" name="ln" id="LN2"></td>
+                        <td><input type="text" name="ln" id="LN">  <span id="lastNameResult"></span></td>
                     </tr>
                     <tr>
                         <td><label for="comment">Your Comment</label></td>
-                        <td> <textarea rows="3" cols="20" placeholder="Write your comment here"></textarea></td>
+                        <td> <textarea rows="3" cols="20" placeholder="Write your comment here"id="comment"> </textarea>  <span id="commentResult"></span></td>
 
 
                         </td>
@@ -139,11 +164,19 @@
 
 
                 </table>
-                <input type="submit" name="btnSubmit" value="Submit"> &nbsp;
+                <input type="button" name="btnSubmit" value="Submit" onclick="validation()">&nbsp;
+
                 <input type="reset" name="btnReset" value="Reset Fields">&nbsp;
         </fieldset>
     </section>
-    <a href="#1"><img src="back to top.jpeg" style="width:70px;height:65px;float:right";></a></div>
+
+    <a href="#1"><img src="back to top.jpeg" style="width:70px;height:65px;float:right"></a></div>
+    <script>
+        alert("You have reached the Page of Taj Mahal.")
+    
+    
+    </script>
+    <script src="7wondersValidation.js"></script>
 </body>
 
 </html>
